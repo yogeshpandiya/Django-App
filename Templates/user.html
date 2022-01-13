@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Logged In</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F4EBDE;" >
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand" style="font-family:serif; font-style:italic; color:#253027">Welome ,{{user.first_name}}</a>
+          </div>
+        </nav>
+      </div>
+      <form class="container-fluid justify-content-end">
+          <a class="btn btn-outline-dark me-2" href="/Home" role="button">Logout</a>
+      </form>
+    </nav>
+
+    <body>
+        <div id="login">
+            <h3 class="text-center text-white">Calculater</h3>
+            <div class="container" style="font-family:serif; font-style:italic;">
+                <div id="login-row" class="row justify-content-center align-items-center">
+                    <div id="login-column" class="col-md-6">
+                        <div id="login-box" class="col-md-12">
+                            <form action= "/calc" method='post' id="/calc" class="form" action="" method="post">
+                                <h3 class="text-center text-dark">Mean, Mode and Median Calculater</h3>
+                                <div class="form-group">
+                                    <label for="one" class="text-dark">Enter First Input:</label><br>
+                                    <input type="text"  name="one" id="one" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="two" class="text-dark">Enter Second Input:</label><br>
+                                    <input type="text" name="two" id="two" class="form-control">
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <label for="three" class="text-dark">Enter Third Indput:</label><br>
+                                    <input type="text" name="three" id="three" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="four" class="text-dark">Enter Fourth Input:</label><br>
+                                    <input type="text" name="four" id="four" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="five" class="text-dark">Enter Fifth Input:</label><br>
+                                    <input type="text" name="five" id="five" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="six" class="text-dark">Enter Six Input:</label><br>
+                                    <input type="text" name="six" id="six" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="seven" class="text-dark">Enter Seventh Input:</label><br>
+                                    <input type="text" name="seven" id="seven" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="eight" class="text-dark">Enter Eighth Input:</label><br>
+                                    <input type="text" name="eight" id="eight" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nine" class="text-dark">Enter Night Input:</label><br>
+                                    <input type="text" name="nine" id="nine" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" name="submit" class="btn btn-dark btn-md" value="Calculate">
+                                </div>
+                                {% csrf_token %}
+                            </form>
+                                Mean : {{Result_Mean}}<br>
+                                Meadian : {{Result_Meadian}}<br>
+                                Mode : {{Result_Mode}}<br><br>
+                            <div>
+                                {%for messages in messages%}
+                                <h3>{{messages}}</h3>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </body>
+</html>
