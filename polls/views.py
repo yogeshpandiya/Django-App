@@ -1,5 +1,3 @@
-from audioop import lin2adpcm
-from re import I
 from django.shortcuts import render, redirect
 
 # Create your views here.
